@@ -51,5 +51,3 @@ We use POM (Page Object Modeling) approach in our project.If we want to change a
 # Test Report
 
 HTML report will be generated after completing the tests.
- # Automation-Pisiffik
-#Testss
