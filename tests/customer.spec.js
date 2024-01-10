@@ -16,16 +16,18 @@ test ("Customer Validation" , async ({page}) =>{
     await expect(customer.customerHeading).toBeVisible()
     
     const options = await page.$$('#Status option')
+    console.log("number of statusBar options:",options.length)
     await expect(options.length).toBe(3)
     
     const employeeOption = await page.$$('#Employee option')
+    console.log("number of employeeBar options:",employeeOption.length)
     await expect(employeeOption.length).toBe(3)
 
     await customer.sFilterbutton()
+
     const entriesOption = await page.$$('#DataTables_Table_0_length option')
+    console.log("number of EntriesBar options:",entriesOption.length)
     await expect(entriesOption.length).toBe(4)
-    //await customer.cDropDownNavigation()
-    // await expect(customer.filterButton).toBeVisible()
     await expect(customer.search).toBeVisible()
    
    //for table grid
@@ -46,7 +48,8 @@ test ("Customer Validation" , async ({page}) =>{
 
 
 
-
+//await customer.cDropDownNavigation()
+    // await expect(customer.filterButton).toBeVisible()
 
 
 //     const cElementsToBeVisible =[

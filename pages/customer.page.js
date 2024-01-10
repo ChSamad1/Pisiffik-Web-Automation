@@ -5,7 +5,6 @@ exports.customerPage = class customerPage{
         this.page = page;
         this.customerHeading = page.getByRole('heading',{name: 'Customers'})
         this.filterButton = page.getByRole('button',{name: 'Clear Filter'})
-        //this.cDropDownSelector = page.locator('.form-select.form-select-sm')
         this.search = page.locator('.form-control.form-control-sm')
         
         
@@ -22,7 +21,8 @@ exports.customerPage = class customerPage{
         }    
 
     }
-
+    
+        //this.cDropDownSelector = page.locator('.form-select.form-select-sm')
       //  async cDropDownNavigation(){
 
     //      await this.cDropDownSelector.selectOption({label: '25'})
