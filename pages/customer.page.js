@@ -6,6 +6,7 @@ exports.customerPage = class customerPage{
         this.customerHeading = page.getByRole('heading',{name: 'Customers'})
         this.filterButton = page.getByRole('button',{name: 'Clear Filter'})
         this.search = page.locator('.form-control.form-control-sm')
+        this.showingEntriesPerPg = page.locator('.dataTables_info')
         
         
         
@@ -21,7 +22,7 @@ exports.customerPage = class customerPage{
         }    
 
     }
-    
+
         //this.cDropDownSelector = page.locator('.form-select.form-select-sm')
       //  async cDropDownNavigation(){
 

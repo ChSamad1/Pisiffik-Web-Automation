@@ -37,6 +37,7 @@ test ("Customer Validation" , async ({page}) =>{
    // for table body
    const list1 = page.locator('tbody')
    await expect(list1).toHaveCount(1)
+   await expect(customer.showingEntriesPerPg).toBeVisible()
 
 
 
