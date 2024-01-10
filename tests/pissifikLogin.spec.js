@@ -15,8 +15,10 @@ test('Login Validation', async({page}) =>{
     await expect(login.page).toHaveURL(staticData.customerUrl)
     
             
-
 })
+
+
+
 
 
 
