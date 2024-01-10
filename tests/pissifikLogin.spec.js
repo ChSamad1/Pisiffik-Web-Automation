@@ -5,7 +5,6 @@ const staticData = require('../data/staticData')
 test('Login Validation', async({page}) =>{
 
     //login Page
-    const login = new loginPage(page)
      await login.gotoLoginPage()
       await expect(login.logo).toBeVisible()
       await expect(login.signInHeading).toBeVisible()
