@@ -30,7 +30,6 @@ const staticData = require('../data/staticData')
 
     const elementsToBeVisible = [
         dashboard.latestActiveOffers,
-        dashboard.viewAll,
         dashboard.offerList,
         dashboard.effectiveTillDate,
     ]
@@ -47,4 +46,7 @@ const staticData = require('../data/staticData')
         console.log(values)
 
      }
+     
+     await dashboard.navigatetofferPage()
+     await expect(dashboard.offerpageHeading).toBeVisible()
 })

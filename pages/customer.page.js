@@ -4,10 +4,15 @@ exports.customerPage = class customerPage{
 
         this.page = page;
         this.customerHeading = page.getByRole('heading',{name: 'Customers'})
-        this.filterButton = page.getByRole('button',{name: 'Clear Filter'})
-        this.search = page.locator('.form-control.form-control-sm')
+        this.customerFilterBtn = page.getByRole('button',{name: 'Clear Filter'})
+        this.customerSearch = page.locator('.form-control.form-control-sm')
         this.showingEntriesPerPg = page.locator('.dataTables_info')
-        
+        this.statusOptions = '#Status'
+        this.employeeStatusOption = '#Employee'
+        this.entriesOptionBar = '//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/select[1]'
+        this.customerTableHeader = '.table-light'
+        this.customerTableData = 'tbody'
+        this.customerTablePagination = '.pagination li a'
         
         
     }
@@ -17,17 +22,13 @@ exports.customerPage = class customerPage{
 
     }
 
-        async sFilterbutton(){
-            await this.filterButton.click()
+        async customerStatussFilterbtn(){
+            await this.customerFilterBtn.click()
         }    
 
     }
 
-        //this.cDropDownSelector = page.locator('.form-select.form-select-sm')
-      //  async cDropDownNavigation(){
-
-    //      await this.cDropDownSelector.selectOption({label: '25'})
-    //     }
+        
 
     // this.sNOGrid =page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[1]')
         // this.loyaltyIdGrid = page.getByRole('columnheader',{name: 'Loyalty Id: activate to sort column ascending'})  

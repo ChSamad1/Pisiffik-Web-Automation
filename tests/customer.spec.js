@@ -15,29 +15,53 @@ test ("Customer Validation" , async ({page}) =>{
     await customer.gotocustomerPage()
     await expect(customer.customerHeading).toBeVisible()
     
-    const options = await page.$$('#Status option')
-    console.log("number of statusBar options:",options.length)
-    await expect(options.length).toBe(3)
+    const options = await page.textContent(customer.statusOptions)
+    await expect(options).toContain('Select Status')
+    await expect(options).toContain('Active')
+    await expect(options).toContain('InActive')
+
+    const employeeOption = await page.textContent(customer.employeeStatusOption)
+    await expect(employeeOption).toContain('Select Option')
+    await expect(employeeOption).toContain('Yes')
+    await expect(employeeOption).toContain('No')
+
+    await customer.customerStatussFilterbtn()
+
+    const entriesOption = await page.textContent(customer.entriesOptionBar)
+    await expect(entriesOption).toContain('10')
+    await expect(entriesOption).toContain('25')
+    await expect(entriesOption).toContain('50')
+    await expect(entriesOption).toContain('100')
+
+    await expect(customer.customerSearch).toBeVisible()
+      //for customer header table  grid
+    const customerTableHeaderList = await page.textContent(customer.customerTableHeader)
+    await expect(customerTableHeaderList).toContain('S.No')
+    // for table body
+    const customerTableBody = await page.textContent(customer.customerTableData)
+    await expect(customerTableBody).toContain('1') 
     
-    const employeeOption = await page.$$('#Employee option')
-    console.log("number of employeeBar options:",employeeOption.length)
-    await expect(employeeOption.length).toBe(3)
 
-    await customer.sFilterbutton()
+    // const tablePagination = await page.locator(customer.customerTablePagination)
+    // await (tablePagination).count()
 
-    const entriesOption = await page.$$('#DataTables_Table_0_length option')
-    console.log("number of EntriesBar options:",entriesOption.length)
-    await expect(entriesOption.length).toBe(4)
-    await expect(customer.search).toBeVisible()
-   
-   //for table grid
-   const list = page.locator('.table-light')
-   await expect(list).toHaveCount(1)
+    // for (let p=0;p< await tablePagination.count();p++)
+    // {
+    //   if (p>0)
+    //   {
+    //     await tablePagination.nth(p).click()
+    //   }
+    //   for(let i=0;i<await rows.count())
+    // }
+
+    // const customerTableList = await page.getByRole('grid').allTextContents();
+ 
+
    //await page.waitForTimeout(3000)
-   // for table body
-   const list1 = page.locator('tbody')
-   await expect(list1).toHaveCount(1)
-   await expect(customer.showingEntriesPerPg).toBeVisible()
+//    // for table body
+//    const list1 = page.locator('tbody')
+//    await expect(list1).toHaveCount(1)
+//    await expect(customer.showingEntriesPerPg).toBeVisible()
 
 
 
@@ -52,23 +76,5 @@ test ("Customer Validation" , async ({page}) =>{
 //await customer.cDropDownNavigation()
     // await expect(customer.filterButton).toBeVisible()
 
-
-//     const cElementsToBeVisible =[
-//         customer.sNOGrid,
-//         customer.loyaltyIdGrid,
-//         customer.customerNameGrid,
-//         customer.emailCard,
-//         customer.phoneCard,
-//         customer.earnedPointsCard,
-//         customer.pointsRedeemCard,
-//         customer.availablePointsCard,
-//         customer.earnedPointsCard,
-//         customer.statusCard,
-//         customer.actionCard,
-        
-//     ]
-//    for (let gridCV of cElementsToBeVisible ){
-//     await expect(gridCV).toBeVisible()
-//    }
 
 })

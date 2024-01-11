@@ -12,14 +12,20 @@ constructor(page){
     this.totalPointsEarned = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]')
     this.totalRedeemPoints = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]')
     this.latestActiveOffers = page.getByRole('heading',{name: 'Latest Active Offers'})
-    this.viewAll = page.locator('.btn.btn-primary')
+    this.viewAllbtn = page.locator('.btn.btn-primary')
     this.offerList = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/table[1]/thead[1]/tr[1]/th[1]')
     this.effectiveTillDate = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/table[1]/thead[1]/tr[1]/th[2]')
+    this.offerpageHeading = page.getByRole('heading',{name: 'Offers'})
 }
 
 async dropdownNavigation(){
   
     await this.dropDownSelector.selectOption({label: "EN"})
+  }
+
+  async navigatetofferPage(){
+    await this.viewAllbtn.click()
+    await this.page.goto('/offers')
   }
  }
 
