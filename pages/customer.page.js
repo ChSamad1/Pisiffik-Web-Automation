@@ -6,13 +6,13 @@ exports.customerPage = class customerPage{
         this.customerHeading = page.getByRole('heading',{name: 'Customers'})
         this.customerFilterBtn = page.getByRole('button',{name: 'Clear Filter'})
         this.customerSearch = page.locator('.form-control.form-control-sm')
-        this.showingEntriesPerPg = page.locator('.dataTables_info')
+        this.showingEntriesPerPg = '.dataTables_info'
         this.statusOptions = '#Status'
         this.employeeStatusOption = '#Employee'
         this.entriesOptionBar = '//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/select[1]'
         this.customerTableHeader = '.table-light'
         this.customerTableData = 'tbody'
-        this.customerTablePagination = '.pagination li a'
+        //this.customerTablePagination = '.pagination li a'
         
         
     }

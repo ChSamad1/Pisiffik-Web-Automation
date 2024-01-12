@@ -40,7 +40,7 @@ test ("Customer Validation" , async ({page}) =>{
     // for table body
     const customerTableBody = await page.textContent(customer.customerTableData)
     await expect(customerTableBody).toContain('1') 
-    
+
 
     // const tablePagination = await page.locator(customer.customerTablePagination)
     // await (tablePagination).count()
@@ -51,8 +51,18 @@ test ("Customer Validation" , async ({page}) =>{
     //   {
     //     await tablePagination.nth(p).click()
     //   }
-    //   for(let i=0;i<await rows.count())
-    // }
+
+    //   for(let i=0;i<await rows.count();i++)
+    //   {
+    //     const row = rows.nth(i)
+    //     const tds=row.locator('td')
+
+    //     for(let j=0;j<await tds.count();j++)
+    //     {
+    //       tds.nth(j).textContent()
+    //     }
+    //   }
+    //       }
 
     // const customerTableList = await page.getByRole('grid').allTextContents();
  
@@ -73,8 +83,6 @@ test ("Customer Validation" , async ({page}) =>{
 
 
 
-//await customer.cDropDownNavigation()
-    // await expect(customer.filterButton).toBeVisible()
 
 
 })
