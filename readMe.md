@@ -51,4 +51,7 @@ We use POM (Page Object Modeling) approach in our project.If we want to change a
 # Test Report
 
 HTML report will be generated after completing the tests.
+<<<<<<< HEAD:ReadMe.md
  
+=======
+>>>>>>> bd5677c70c2f80afd2e0763482077f8a5053ab5a:readMe.md
