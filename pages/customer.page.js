@@ -12,7 +12,8 @@ exports.customerPage = class customerPage{
         this.entriesOptionBar = '//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/select[1]'
         this.customerTableHeader = '.table-light'
         this.customerTableData = 'tbody'
-         this.nextPgBtn = '.paginate_button page-item next'
+        this.nextPgBtn = '.paginate_button.page-item.next'
+        this.customerEntriesPerPage = '.dataTables_info'
         
         
     }
@@ -29,38 +30,50 @@ exports.customerPage = class customerPage{
         await this.customerSearch.type('Abdul Rehman')
         await this.customerSearch.press('Enter');
 
-    }  
-    async nextPageBtn(){
+    }
+    // async customerEntriesPerPg(){
 
-        for (let pageNum = 1; pageNum <= 910; pageNum++) {
+    //     await this.customerEntriesPerPage.waitForSelector('20')
+    // }
 
-        const nextPageButton = await this.page.$(`${this.nextPgBtn}>a`)
+        
 
-        if (nextPageButton) {
-            await nextPageButton.click()
+        }
 
-            await this.page.waitForTimeout(2000);
-          } 
-          else {
-            break;
-          }
+ 
+     
+            
+    
+            
           
+      
+     
 
-        // for (let pageNum = 1; pageNum <= 910; pageNum++) {
+    
 
-        //     const nextPageButton = await this.nextPgBtn
+     
+    
+    
+     
+    
+
+    // for (let pageNum = 1; pageNum <= 910; pageNum++) {
+
+    //     const nextPageButton = await this.page.$(`${this.nextPgBtn}> a`)
         
-        //     if (nextPageButton) {
-        //       await nextPageButton.click();
-        
-        
+    //         if (nextPageButton) {
+    //           await nextPageButton.click()
               
-        //     } else {
-        //       break;
-        //     }
-
-
-    }}}
+              
+    //         }
+    //          else 
+    //         {
+    //           break;
+    //         }
+            
+           
+         
+        
 
         
   

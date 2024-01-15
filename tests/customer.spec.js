@@ -33,26 +33,49 @@ test ("Customer Validation" , async ({page}) =>{
     await expect(entriesOption).toContain('50')
     await expect(entriesOption).toContain('100')
 
-    //await customer.customerSearchOpt()
+    //  await customer.customerSearchOpt()
 
-
-    //await customer.customerSearchOpt()
       //for customer header table  grid
     const customerTableHeaderList = await page.textContent(customer.customerTableHeader)
     await expect(customerTableHeaderList).toContain('S.No')
     // for table body
+    await page.waitForTimeout(5000)
     const customerTableBody = await page.textContent(customer.customerTableData)
     await expect(customerTableBody).toContain('1')
 
-    await page.waitForTimeout(5000)
 
-    await customer.nextPageBtn()
-    
-    
+
+    await page.waitForTimeout(3000)
+
+
+    for (let pageNum = 1; pageNum <= 910; pageNum++) {
+
+      const nextPage = await page.waitForSelector(customer.nextPgBtn);
   
+        if (nextPage) {
+          await nextPage.click();
+          await page.waitForTimeout(3000)
+          await nextPage.isVisible()
+      
+        }
+        else
+        {
+          break;
+      }
+        await customer.customerSearchOpt()
+
+
+
+  }
+      
+   }  
+
+
+     
     
 
-})
+
+)
 
     // const tablePagination = await page.locator(customer.customerTablePagination)
     // await (tablePagination).count()
