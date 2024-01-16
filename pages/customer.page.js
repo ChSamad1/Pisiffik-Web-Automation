@@ -12,9 +12,13 @@ exports.customerPage = class customerPage{
         this.entriesOptionBar = '//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/select[1]'
         this.customerTableHeader = '.table-light'
         this.customerTableData = 'tbody'
-        this.nextPgBtn = '.paginate_button.page-item.next'
-        this.customerEntriesPerPage = '.dataTables_info'
+        this.customerEntriesPerpage = page.locator('.dataTables_info')
+        this.customernextPage = page.getByRole('link',{name: 'Next'})
+        this.customerPreviousPg = page.getByRole('link',{name: 'Previous'})
         
+
+
+     
         
     }
     async gotocustomerPage(){
@@ -31,60 +35,20 @@ exports.customerPage = class customerPage{
         await this.customerSearch.press('Enter');
 
     }
-    // async customerEntriesPerPg(){
-
-    //     await this.customerEntriesPerPage.waitForSelector('20')
-    // }
-
-        
-
-        }
-
- 
-     
-            
     
-            
+    async customerNextPageNavigation(){
+
+        await this.customernextPage.click()
+        await this.page.goto('/customer#')
+        
+        
+    }
+    async customerPreviousPgNavigation(){
+        await this.customerPreviousPg.click()
+        await this.page.goto('/customer#')
+        
+    }
           
-      
-     
 
-    
 
-     
-    
-    
-     
-    
-
-    // for (let pageNum = 1; pageNum <= 910; pageNum++) {
-
-    //     const nextPageButton = await this.page.$(`${this.nextPgBtn}> a`)
-        
-    //         if (nextPageButton) {
-    //           await nextPageButton.click()
-              
-              
-    //         }
-    //          else 
-    //         {
-    //           break;
-    //         }
-            
-           
-         
-        
-
-        
-  
-    // this.sNOGrid =page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[1]')
-        // this.loyaltyIdGrid = page.getByRole('columnheader',{name: 'Loyalty Id: activate to sort column ascending'})  
-        // this.customerNameGrid = page.getByRole('columnheader', {name: 'Customer Name: activate to sort column ascending'})
-        // this.emailCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[4]')
-        // this.phoneCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[5]')
-        // this.earnedPointsCard = page.getByRole('columnheading',{name:'Earned Points: activate to sort column ascending'})
-        // this.pointsRedeemCard = page.getByRole('columnheading',{name: 'Points Redeem: activate to sort column descending'})
-        // this.availablePointsCard = page.getByRole('columnheader',{name: 'Available Points: activate.to.sort.column.ascending'})
-        // this.employeeCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[9]')
-        // this.statusCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[9]')
-        // this.actionCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[10]')
+}

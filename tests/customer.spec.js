@@ -39,85 +39,37 @@ test ("Customer Validation" , async ({page}) =>{
     const customerTableHeaderList = await page.textContent(customer.customerTableHeader)
     await expect(customerTableHeaderList).toContain('S.No')
     // for table body
-    await page.waitForTimeout(5000)
     const customerTableBody = await page.textContent(customer.customerTableData)
     await expect(customerTableBody).toContain('1')
 
 
+    // const customerentries = await page.textContent(customer.customerEntriesPerpage)
+    // await expect(customerentries).toContain('Showing 1 to 10 of 9,094 entries')
+    await expect(customer.customerEntriesPerpage).toBeVisible()
+    await customer.customerNextPageNavigation()
+    await expect(customer.customerEntriesPerpage).toBeVisible()
 
-    await page.waitForTimeout(3000)
+    //await page.waitForTimeout(3000)
+    // const customerEntriesPg2 = await page.textContent(customer.customerEntriesPerpage)
+    // await expect(customerEntriesPg2).toContain('Showing 11 to 20 of 9,094 entries')
+    await customer.customerPreviousPgNavigation()
+    await expect(customer.customerEntriesPerpage).toBeVisible() 
 
-
-    for (let pageNum = 1; pageNum <= 910; pageNum++) {
-
-      const nextPage = await page.waitForSelector(customer.nextPgBtn);
-  
-        if (nextPage) {
-          await nextPage.click();
-          await page.waitForTimeout(3000)
-          await nextPage.isVisible()
-      
-        }
-        else
-        {
-          break;
-      }
-        await customer.customerSearchOpt()
+    await customer.customerSearchOpt()  
 
 
+    //await page.waitForTimeout(3000)
 
-  }
-      
-   }  
-
-
-     
+    // const customerEntriesPreviousPg1 = await page.textContent(customer.customerEntriesPerpage)
+    // await expect(customerEntriesPreviousPg1).toContain('Showing 1 to 10 of 9,094 entries')
     
 
-
-)
-
-    // const tablePagination = await page.locator(customer.customerTablePagination)
-    // await (tablePagination).count()
-
-    // for (let p=0;p< await tablePagination.count();p++)
-    // {
-    //   if (p>0)
-    //   {
-    //     await tablePagination.nth(p).click()
-    //   }
-
-    //   for(let i=0;i<await rows.count();i++)
-    //   {
-    //     const row = rows.nth(i)
-    //     const tds=row.locator('td')
-
-    //     for(let j=0;j<await tds.count();j++)
-    //     {
-    //       tds.nth(j).textContent()
-    //     }
-    //   }
-    //       }
-
-    // const customerTableList = await page.getByRole('grid').allTextContents();
- 
-
-   //await page.waitForTimeout(3000)
-//    // for table body
-//    const list1 = page.locator('tbody')
-//    await expect(list1).toHaveCount(1)
-//    await expect(customer.showingEntriesPerPg).toBeVisible()
-
-
-
+    
+    
 //another way to see count
 //const gridTable = await page.locator('table-light')
 //    const elements = await page.locator('thead tr th')
 //    console.log('number of columns:',await elements.count())
 //    expect (await elements.count()).toBe(11)
 
-
-
-
-
-
+})

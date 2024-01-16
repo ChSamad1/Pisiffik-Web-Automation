@@ -11,6 +11,7 @@ class commonData{
         //URL's
         this.dashboardUrl =  '/dashboard'
         this.customerUrl = '/customer'
+        this.nextpageUrl = '/customer#'
         
 
     }
