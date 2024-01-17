@@ -1,6 +1,6 @@
  exports.dashboardPage = class dashboardPage{
 
-constructor(page){
+    constructor(page){
     this.page =page;
     this.dashboardHeading = page.getByRole('heading',{name:'Dashboard'})
     this.dropDownSelector = page.locator('.form-select.changeLang')
@@ -9,8 +9,9 @@ constructor(page){
     this.totalLoyaltyCustomersCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]')
     this.activeLoyaltyMembersCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]')
     this.newMembersTodayCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]')
-    this.totalPointsEarned = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]')
-    this.totalRedeemPoints = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]')
+    this.totalPointsEarnedCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]')
+    this.totalRedeemPointsCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]')
+    this.blankCard = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[6]') 
     this.latestActiveOffers = page.getByRole('heading',{name: 'Latest Active Offers'})
     this.viewAllbtn = page.locator('.btn.btn-primary')
     this.offerList = page.locator('//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[3]/table[1]/thead[1]/tr[1]/th[1]')

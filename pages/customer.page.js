@@ -15,7 +15,7 @@ exports.customerPage = class customerPage{
         this.customerEntriesPerpage = '.dataTables_info'
         this.customernextPage = page.getByRole('link',{name: 'Next'})
         this.customerPreviousPg = page.getByRole('link',{name: 'Previous'})
-            
+                   
         
     }
     async gotocustomerPage(){

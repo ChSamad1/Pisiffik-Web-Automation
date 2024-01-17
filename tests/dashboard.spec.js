@@ -19,8 +19,9 @@ const staticData = require('../data/staticData')
         dashboard.totalLoyaltyCustomersCard,
         dashboard.activeLoyaltyMembersCard,
         dashboard.newMembersTodayCard,
-        dashboard.totalPointsEarned,
-        dashboard.totalRedeemPoints,
+        dashboard.totalPointsEarnedCard,
+        dashboard.totalRedeemPointsCard,
+        dashboard.blankCard,
     ]    
 
         for(let element of cardsElementsToBeVisible){
@@ -37,7 +38,7 @@ const staticData = require('../data/staticData')
     await expect(gridDV).toBeVisible()
      }
 
-// foreach loop
+     // foreach loop
     //await page.pause()
     const elementValues = await page.$$('my-2 py-1')
      for(const elementValue of elementValues)
