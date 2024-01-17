@@ -12,13 +12,10 @@ exports.customerPage = class customerPage{
         this.entriesOptionBar = '//html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/select[1]'
         this.customerTableHeader = '.table-light'
         this.customerTableData = 'tbody'
-        this.customerEntriesPerpage = page.locator('.dataTables_info')
+        this.customerEntriesPerpage = '.dataTables_info'
         this.customernextPage = page.getByRole('link',{name: 'Next'})
         this.customerPreviousPg = page.getByRole('link',{name: 'Previous'})
-        
-
-
-     
+            
         
     }
     async gotocustomerPage(){
@@ -40,15 +37,12 @@ exports.customerPage = class customerPage{
 
         await this.customernextPage.click()
         await this.page.goto('/customer#')
-        
-        
+         
     }
     async customerPreviousPgNavigation(){
         await this.customerPreviousPg.click()
         await this.page.goto('/customer#')
-        
+
     }
           
-
-
 }
