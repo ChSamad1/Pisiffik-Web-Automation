@@ -33,7 +33,6 @@ test ("Customer Validation" , async ({page}) =>{
     await expect(entriesOption).toContain('50')
     await expect(entriesOption).toContain('100')
 
-    //  await customer.customerSearchOpt()
 
       //for customer header table  grid
     const customerTableHeaderList = await page.textContent(customer.customerTableHeader)
@@ -42,30 +41,19 @@ test ("Customer Validation" , async ({page}) =>{
     const customerTableBody = await page.textContent(customer.customerTableData)
     await expect(customerTableBody).toContain('1')
 
-    const customerentries = await page.textContent(customer.customerEntriesPerpage)
-    await expect(customerentries).toContain('Showing 1 to 10 of 9,094 entries')
-    console.log(customerentries)
-    
+  
 
-    //await expect(customer.customerEntriesPerpage).toBeVisible()
+    await customer.customerEntries()
     await customer.customerNextPageNavigation()
-    //await expect(customer.customerEntriesPerpage).toBeVisible()
-    //await page.waitForTimeout(3000)
-     const customerEntriesPg2 = await page.textContent(customer.customerEntriesPerpage)
-     await expect(customerEntriesPg2).toContain('Showing 11 to 20 of 9,094 entries')
-     console.log(customerEntriesPg2)
-     
+   // await page.waitForTimeout(3000)
+    await customer.customerEntries()
 
     await customer.customerPreviousPgNavigation()
-    //await expect(customer.customerEntriesPerpage).toBeVisible() 
+    //await page.waitForTimeout(3000) 
+    await customer.customerEntries()
 
-    //await customer.customerSearchOpt()  
-    //await page.waitForTimeout(3000)
-    
-     const customerEntriesPreviousPg1 = await page.textContent(customer.customerEntriesPerpage)
-     await expect(customerEntriesPreviousPg1).toContain('Showing 1 to 10 of 9,094 entries')
-     console.log(customerEntriesPreviousPg1)
-    
+    await customer.customerSearchOpt()  
+  
     
     
 //another way to see count
