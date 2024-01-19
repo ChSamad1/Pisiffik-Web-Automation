@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test')
 const { loginPage } = require('../pages/login.page')
 const { dashboardPage } = require('../pages/dashboard.page')
-const staticData = require('../data/staticData')
+const  staticData = require('../data/staticData')
 
  test("Dashboard Validation", async({page}) =>{
 
@@ -29,11 +29,12 @@ const staticData = require('../data/staticData')
         
 }
 
-    const elementsToBeVisible = [
+        const elementsToBeVisible = [
         dashboard.latestActiveOffers,
         dashboard.offerList,
         dashboard.effectiveTillDate,
     ]
+
     for(let gridDV of elementsToBeVisible){
     await expect(gridDV).toBeVisible()
      }

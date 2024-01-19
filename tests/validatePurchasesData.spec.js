@@ -45,5 +45,4 @@ test("validatePurchasesData Validation", async ({page}) => {
 
     //await page.waitForTimeout(3000)
 
-
 })

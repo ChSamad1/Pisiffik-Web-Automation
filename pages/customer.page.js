@@ -41,7 +41,6 @@ exports.customerPage = class customerPage{
      
     }
 
-
     async customerPreviousPgNavigation(){
 
         await this.customerPreviousPg.click()
