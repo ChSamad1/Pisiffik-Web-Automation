@@ -14,9 +14,7 @@ exports.purchasesPage = class purchasesPage{
         this.purchasesNextPg = page.getByRole('link',{name: 'Next'})
         this.purchasesPreviousPg = page.getByRole('link',{name: 'Previous'})
         
-
     }
-
 
     async gotoPurchasesPage(){
 
@@ -27,14 +25,11 @@ exports.purchasesPage = class purchasesPage{
 
         await this.purchaesFromToDate.fill(fromToDate)
 
-
     }
     async purchasesToDate(toDate){
     
         //await this.purchaesToDateCalender.type('11/18/2023')
         await this.purchaesToDateCalender.fill(toDate);
-
-
 
     }
 
@@ -44,15 +39,15 @@ exports.purchasesPage = class purchasesPage{
 
     }
 
-    async purchasesEntriesOption(){
-     await this.purchasesEntriesOpt.textContent()
+    async purchasesEntriesOption(entries){
+     await this.purchasesEntriesOpt.textContent(entries)
+     
     }
 
     async purchasesTableHeader(){
 
      await this.purchasesTableHeaderList.textContent()
         
-
     }
 
     async purchasesTableBody(){
@@ -72,9 +67,7 @@ exports.purchasesPage = class purchasesPage{
  
      }
 
-
-    async purchasesEntriesNoPerPg(){
-
+     async purchasesEntriesNoPerPg(){
 
         const purchasesdata = await this.purchasesEntriesPerPage
         const getAllData = await purchasesdata.innerText()
@@ -83,8 +76,3 @@ exports.purchasesPage = class purchasesPage{
     }
     
 }
-    
-   
-
-
-

@@ -50,7 +50,6 @@ exports.customerPage = class customerPage{
 
     async customerEntries(){
 
-
         const data = await this.customerEntriesPerpage
         const getData = await data.innerText()
         console.log(getData)
