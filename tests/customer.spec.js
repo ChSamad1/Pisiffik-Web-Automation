@@ -4,7 +4,7 @@ const { dashboardPage } = require('../pages/dashboard.page')
 const {customerPage} = require('../pages/customer.page')
 const staticData = require('../data/staticData')
 
-test ("Customer Validation" , async ({page}) =>{
+test("Customer Validation" , async ({page}) =>{
     
     const login = new loginPage(page)
     const dashboard = new dashboardPage(page)
@@ -56,9 +56,9 @@ test ("Customer Validation" , async ({page}) =>{
   
     
     
-//another way to see count
-//const gridTable = await page.locator('table-light')
-//    const elements = await page.locator('thead tr th')
+//    another way to see count
+//    const gridTable = await page.locator('table-light')
+//    const elements = await page.locator('tbody tr ')
 //    console.log('number of columns:',await elements.count())
 //    expect (await elements.count()).toBe(11)
 

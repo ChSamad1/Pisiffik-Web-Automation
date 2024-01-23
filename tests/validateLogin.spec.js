@@ -15,12 +15,14 @@ test('Login Validation with valid credentials', async({page}) =>{
      await expect(login.page).toHaveURL(staticData.dashboardUrl)
      await expect(login.page).toHaveURL(staticData.customerUrl)
      await expect(login.page).toHaveURL(staticData.purchaseUrl)
+     await expect(login.page).toHaveURL(staticData.ticketsUrl)
+
      
     
             
 })
 
-test.skip('Login Validation with Invalid credentials', async({page}) =>{
+test('Login Validation with Invalid credentials', async({page}) =>{
 
     //login Page
 const login = new loginPage(page)

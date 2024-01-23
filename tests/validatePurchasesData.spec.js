@@ -23,7 +23,7 @@ test("validatePurchasesData Validation", async ({page}) => {
     // await page.pause()
     await purchases.purchasesToDate('2023-11-18')
     
-    await purchases.purchasesEntriesOption('10 25 50 100')
+    await purchases.purchasesEntriesOption('10')
 
     await purchases.purchasesTableHeader()
 

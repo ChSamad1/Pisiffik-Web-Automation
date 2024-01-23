@@ -28,7 +28,6 @@ exports.purchasesPage = class purchasesPage{
     }
     async purchasesToDate(toDate){
     
-        //await this.purchaesToDateCalender.type('11/18/2023')
         await this.purchaesToDateCalender.fill(toDate);
 
     }
