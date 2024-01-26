@@ -9,7 +9,6 @@ exports.loginPage = class loginPage{
         this.password = page.getByPlaceholder('Enter your password')
         this.loginButton = page.getByRole('button',{name: 'Sign In'}) 
         this.logInToastrmsg = page.locator('#toast-container') 
-
         this.errorToastrMsg = page.locator('#error')
         
     }
@@ -23,20 +22,5 @@ exports.loginPage = class loginPage{
             await this.loginButton.click()
 
     }
-    async toastrmsg(){
-
-       const tostmsg =  await this.logInToastrmsg.textContent()
-        console.log(tostmsg)
-}
-
-
-
-    async errortoastrmsg(){
-        const tostmsg1 =  await this.errorToastrMsg.textContent()
-        
-         console.log(tostmsg1)
- 
-   
-}
 
 }

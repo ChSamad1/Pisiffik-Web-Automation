@@ -14,7 +14,8 @@ test("validatePurchasesData Validation", async ({page}) => {
     await login.gotoLoginPage()
     login.Login (staticData.email,staticData.password)
     await expect(dashboard.page).toHaveURL(staticData.dashboardUrl) 
-    await purchases.gotoPurchasesPage()
+    await purchases.navigatetoPurchasesPage()
+    await expect(purchases.page).toHaveURL(staticData.purchaseUrl)
     await expect(purchases.purchasesHeading).toBeVisible()
     await expect(purchases.purchaseParagraph).toBeVisible()
     

@@ -26,7 +26,6 @@ async dropdownNavigation(){
 
   async navigatetofferPage(){
     await this.viewAllbtn.click()
-    // await this.page.goto('/offers')
   }
  }
 
