@@ -3,13 +3,12 @@ exports.reasonsPage = class reasonsPage{
 
         this.page = page;
         this.reasonsHeading = page.getByRole('heading',{name:'Reason'})
-        this.reasonsAddNewOpt = page.getByRole('link',{name: '󰐗 Add New'})
-        this.reasonsAddNewDetails= page.locator('.modal-content')
-        //this.reasonsAddNewHeading = page.getByRole('heading',{name:'Add New Reason'})
-        this.reasonsEntriesOpt = '.form-select.form-select-sm'
-        this.reasonsSearchOption = page.locator('.form-control.form-control-sm')
-        this.reasonsTable = page.locator('.table.table-centered.w-100.datatable.yajra-datatable.dataTable.no-footer')
-        this.reasonsEntriesPerPage = page.locator('#DataTables_Table_0_info')
+        this.reasonsAddNewBtn = page.getByRole('link',{name: '󰐗 Add New'})
+        this.reasonsAddNewBtnDetails = page.getByRole('textbox')
+        this.reasonsSaveBtn =page.locator('.btn.btn-info.waves-effect.waves-light')
+        this.reasonsDeleteBtn =page.locator('.btn.btn-danger.btn-sm.delete_record.mr-2')
+        this.reasonsDeleteConfirm =page.getByRole('button' ,{name: 'YES!'})
+        this.reasonsDeleteMsg = page.locator('.btn.btn-default')
 
 
     }
@@ -19,32 +18,33 @@ exports.reasonsPage = class reasonsPage{
         await this.page.goto('/reason')
     }
 
-    async reasonsAddNewOptions(){
+    async reasonsAddNewButton(){
 
-    await this.reasonsAddNewOpt.click()
-
-    
-}
-
-
-async reasonsSearchOpt(reasonsOpt){
-    await this.reasonsSearchOption.fill(reasonsOpt)
-}
-async reasonsTableDetals(Name){
-
-    await this.reasonsTable.textContent(Name)
-}
-
-async reasonEntriesNoPerPg(){
-
-    const reasonsData = await this.reasonsEntriesPerPage
-    const getReasonData = await reasonsData.innerText()
-    console.log(getReasonData)
+    await this.reasonsAddNewBtn.click()
 
     
 }
-
-
-
+ async reasonsAddNewButtonDetails(name){
+    await this.reasonsAddNewBtnDetails.fill(name)
+ }
+ async reasonsSaveButton(){
+    await this.reasonsSaveBtn.click()
+ }
+ async reasonsDeleteButton(){
+    await this.reasonsDeleteBtn.click()
+ }
+ async reasonsDeleteButtonYes(){
+    await this.reasonsDeleteConfirm.click()
+ }
+ async reasonsDeleteMsgOk(){
+    await this.reasonsDeleteMsg.click()
+ }
 
 }
+
+    
+
+
+
+
+

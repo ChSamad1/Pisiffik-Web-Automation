@@ -4,7 +4,7 @@ class commonData{
         //Credentials
         this.email = "admin@pisiffik.com";
         this.password = "SA@Pisiffik2023$"
-        this.invalidPassword = "233332"
+        this.newPassword = "samad"
 
         
         
@@ -16,7 +16,7 @@ class commonData{
         this.customerSupportUrl = '#CustomerSupport'
         this.ticketsUrl = '/tickets'
         this.reasonsUrl = '/reason'
-        
+        this.userProfileUrl ='/setting'
 
     }
 
