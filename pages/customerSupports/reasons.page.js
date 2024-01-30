@@ -13,9 +13,9 @@ exports.reasonsPage = class reasonsPage{
 
     }
 
-    async gotoreasonsPage(){
+    async navigateToReasonsPage(){
 
-        await this.page.goto('/reason')
+        await this.navigateToReasonsPg.click()
     }
 
     async reasonsAddNewButton(){

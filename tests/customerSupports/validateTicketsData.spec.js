@@ -1,9 +1,9 @@
 const {test,expect} = require('@playwright/test')
-const{loginPage} = require('../pages/login.page')
-const{dashboardPage} = require('../pages/dashboard.page')
-const { customerSupporPage} = require('../pages/customerSupports/customerSupports.page')
-const { ticketsPage } = require('../pages/customerSupports/tickets.page')
-const staticData = require('../data/staticData')
+const{loginPage} = require('../../pages/login.page')
+const{dashboardPage} = require('../../pages/dashboard.page')
+const { customerSupportsPage} = require('../../pages/customerSupports/customerSupports.page')
+const { ticketsPage } = require('../../pages/customerSupports/tickets.page')
+const staticData = require('../../data/staticData')
 
 
 test('Tickets Validation', async ({page}) => {
@@ -11,14 +11,14 @@ test('Tickets Validation', async ({page}) => {
 
     const login = new loginPage(page)
     const dashboard = new dashboardPage(page)
-    const customerSupport = new customerSupporPage(page)
+    const customerSupports = new customerSupportsPage(page)
     const tickets = new ticketsPage(page)
     await login.gotoLoginPage()
     login.Login (staticData.email,staticData.password)
     await expect(dashboard.page).toHaveURL(staticData.dashboardUrl)
-    await customerSupport.gotoCustomerSupportPage()
-    await expect (customerSupport.customerRoleOpt).toBeVisible()
-    await tickets.gotoTicketsPage()
+    await customerSupports.navigateToCustomerOption()
+    await tickets.navigateToTicketsPage()
+    await expect(tickets.page).toHaveURL(staticData.ticketsUrl)
     await expect(tickets.ticketsPgHeading).toBeVisible()
 
     

@@ -1,12 +1,12 @@
-exports.customerSupporPage = class customerSupportPage{
+exports.customerSupportsPage = class customerSupportsPage{
 
     constructor(page){
 
         this.page = page;
-        this.customerRoleOpt = page.getByRole('link',{name:' Customer support 󰅂'})
+        this.navigateToCustomerOpt = page.getByRole('link',{name:' Customer support 󰅂'})
     }
 
-    async gotoCustomerSupportPage(){
-        await this.page.goto('#CustomerSupport')
+    async navigateToCustomerOption(){
+        await this.navigateToCustomerOpt.click()
     }
 }

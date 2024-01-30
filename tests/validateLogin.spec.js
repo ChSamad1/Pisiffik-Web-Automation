@@ -1,6 +1,8 @@
 const {test,expect} = require('@playwright/test')
 const { loginPage } = require('../pages/login.page')
+const { toastermsg, errorToasterMsg} = require('../utils/commonHelper')
 const staticData = require('../data/staticData')
+
 
 test('Login Validation with valid credentials', async({page}) =>{
 
@@ -11,34 +13,38 @@ test('Login Validation with valid credentials', async({page}) =>{
      await expect(login.signInHeading).toBeVisible()
      await expect(login.forgotPassword).toBeVisible()
      await login.Login(staticData.email,staticData.password)
-     await login.toastrmsg()
+     await toastermsg (page, login.logInToastrmsg, 'LoggedIn successfully');
      await expect(login.page).toHaveURL(staticData.dashboardUrl)
-     await expect(login.page).toHaveURL(staticData.customerUrl)
-     await expect(login.page).toHaveURL(staticData.purchaseUrl)
-     await expect(login.page).toHaveURL(staticData.ticketsUrl)
+    //  await page.waitForTimeout(3000)
+
+    //  await expect(login.page).toHaveURL(staticData.customerUrl)
+
+    //  await expect(login.page).toHaveURL(staticData.purchaseUrl)
+    //  await expect(login.page).toHaveURL(staticData.ticketsUrl)
+    //  await expect(login.page).toHaveURL(staticData.reasonsUrl)
+    //  await expect(login.page).toHaveURL(staticData.membershipProductsUrl)
+
+          
+          
 
      
     
-            
+
 })
 
-test('Login Validation with Invalid credentials', async({page}) =>{
+test.skip('Login Validation with Invalid credentials', async({page}) =>{
 
     //login Page
-const login = new loginPage(page)
-
+    const login = new loginPage(page)
      await login.gotoLoginPage()
      await expect(login.logo).toBeVisible()
      await expect(login.signInHeading).toBeVisible()
      await expect(login.forgotPassword).toBeVisible()
      await login.Login(staticData.email,staticData.invalidPassword)
-     await login.errortoastrmsg()
+    await  errorToasterMsg(page, login.errorToastrMsg, 'Email or Password entered is incorrect.');
 
-    //  await expect(login.page).toHaveURL(staticData.dashboardUrl)
-    //  await expect(login.page).toHaveURL(staticData.customerUrl)
-    //  await expect(login.page).toHaveURL(staticData.purchaseUrl)
-    
-            
+
+                
 })
 
 

@@ -16,13 +16,13 @@ exports.ticketsPage = class ticketsPage{
          this.ticketsNextPg = page.getByRole('link',{name: 'Next'})
         //this.ticketsNextPg = page.locator('#DataTables_Table_0_next')
         this.ticketsPreviousPg = page.getByRole('link',{name: 'Previous'})
-
+        this.navigateToTicketsPg = page.getByRole('link',{name: 'Tickets'})
 
     }
 
-    async gotoTicketsPage(){
+    async navigateToTicketsPage(){
 
-        await this.page.goto('/tickets')
+        await this.navigateToTicketsPg.click()
     }
 
      async ticketsDateRangeOpt(dateRange){

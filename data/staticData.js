@@ -13,7 +13,6 @@ class commonData{
         this.dashboardUrl =  '/dashboard'
         this.customerUrl = '/customer'
         this.purchaseUrl = '/purchase'
-        this.customerSupportUrl = '#CustomerSupport'
         this.ticketsUrl = '/tickets'
         this.reasonsUrl = '/reason'
         this.userProfileUrl ='/setting'

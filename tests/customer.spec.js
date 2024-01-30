@@ -11,8 +11,9 @@ test("Customer Validation" , async ({page}) =>{
     const customer = new customerPage(page)
     await login.gotoLoginPage()
     await login.Login(staticData.email,staticData.password)
-    await expect(dashboard.page).toHaveURL(staticData.dashboardUrl) 
-    await customer.gotocustomerPage()
+    await expect(dashboard.page).toHaveURL(staticData.dashboardUrl)
+    await customer.navigatetocustomerPage() 
+    await expect(customer.page).toHaveURL(staticData.customerUrl)
     await expect(customer.customerHeading).toBeVisible()
     
     const options = await page.textContent(customer.statusOptions)
@@ -38,8 +39,10 @@ test("Customer Validation" , async ({page}) =>{
     const customerTableHeaderList = await page.textContent(customer.customerTableHeader)
     await expect(customerTableHeaderList).toContain('S.No')
     // for table body
+    await page.waitForTimeout(3000)
     const customerTableBody = await page.textContent(customer.customerTableData)
     await expect(customerTableBody).toContain('1')
+    await page.waitForTimeout(3000)
 
   
 
@@ -51,7 +54,7 @@ test("Customer Validation" , async ({page}) =>{
     await customer.customerPreviousPgNavigation()
     //await page.waitForTimeout(3000) 
     await customer.customerEntries()
-
+    
     await customer.customerSearchOpt()  
   
     

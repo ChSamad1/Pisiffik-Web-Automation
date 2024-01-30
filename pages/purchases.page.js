@@ -13,12 +13,14 @@ exports.purchasesPage = class purchasesPage{
         this.purchasesEntriesPerPage = page.locator('#DataTables_Table_0_info')
         this.purchasesNextPg = page.getByRole('link',{name: 'Next'})
         this.purchasesPreviousPg = page.getByRole('link',{name: 'Previous'})
+
+        this.navigateToPurchasesPg = page.getByRole('link',{name:' Purchases'})
         
     }
 
-    async gotoPurchasesPage(){
+    async navigatetoPurchasesPage(){
 
-        await this.page.goto('/purchase')
+        await this.navigateToPurchasesPg.click()
     }
 
     async purchaseFromTo(fromToDate){
