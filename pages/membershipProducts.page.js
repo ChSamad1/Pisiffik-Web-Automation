@@ -12,12 +12,16 @@ exports.membershipProductsPage = class membershipProductsPage{
         this.membershipProductTableSwitchStatus = page.locator('.form-check-input.chexkbox').nth(0)
         this.membershipProductsTableProductSelOpt = page.locator('#productSelect').nth(0)
         this.membershipProductsTableAddOpt = page.locator('#submitMembership')
-        this.membershipProductsTableEntryDelOpt = page.getByRole('button', { name: 'Delete' }).nth(1)
-        this.membershipProductsTableEntryDelOptConformation = page.getByRole('button', { name: 'Yes' })
+        this.membershipProductsTableEntryDelOpt = page.locator('.mdi.mdi-minus-circle.me-1.cursor.fa-2x.removeProductBtn.text-danger')
         this.membershipProductsEntriesOpt = '.form-select.form-select-sm'
         this.membershipProductsSearchBox = page.locator('.form-control.form-control-sm')
         this.membershipProductsTableOpt = '.table.table-centered.w-100.datatable.yajra-datatable.dataTable.no-footer'
+        this.membershipProductsEntriesPerPage = page.locator('#DataTables_Table_0_info')
+        this.membershipProductsnextPage = page.getByRole('link',{name: 'Next'})
+        this.membershipProductsPreviousPg = page.getByRole('link',{name: 'Previous'})
+
         this.navigateToMemberShipPage = page.getByRole('link',{name: 'Membership Products'})
+
     
     }
     async navigateTomembershipProductsPage(){
@@ -66,9 +70,27 @@ exports.membershipProductsPage = class membershipProductsPage{
         await this.membershipProductsTableEntryDelOpt.click()
     }
     
-    async membershipProductsTableEntryDelOptionConformation(){
-        await this.membershipProductsTableEntryDelOptConformation.click()
+
+    async membershipProductsEntries(){
+
+        const data = await this.membershipProductsEntriesPerPage
+        const getData = await data.innerText()
+        console.log(getData)
+
     }
+    async membershipProductsNextPageBtn(){
+
+        await this.membershipProductsnextPage.click()
+  
+     }
+ 
+     async membershipProductsPreviousPageBtn(){
+
+        await this.membershipProductsPreviousPg.click()
+ 
+      
+     }
+      
 
     
 

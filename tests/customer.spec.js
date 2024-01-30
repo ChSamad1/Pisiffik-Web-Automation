@@ -54,7 +54,7 @@ test("Customer Validation" , async ({page}) =>{
     await customer.customerPreviousPgNavigation()
     //await page.waitForTimeout(3000) 
     await customer.customerEntries()
-
+    
     await customer.customerSearchOpt()  
   
     

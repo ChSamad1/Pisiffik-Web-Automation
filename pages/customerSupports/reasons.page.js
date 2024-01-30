@@ -58,7 +58,6 @@ async reasonEntriesNoPerPg(){
     const getReasonData = await reasonsData.innerText()
     console.log(getReasonData)
 
-    
 }
 
 

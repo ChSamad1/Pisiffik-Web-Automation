@@ -13,7 +13,7 @@ test('Login Validation with valid credentials', async({page}) =>{
      await expect(login.signInHeading).toBeVisible()
      await expect(login.forgotPassword).toBeVisible()
      await login.Login(staticData.email,staticData.password)
-     await toastermsg (page, '#toast-container', 'LoggedIn successfully');
+     await toastermsg (page, login.logInToastrmsg, 'LoggedIn successfully');
      await expect(login.page).toHaveURL(staticData.dashboardUrl)
     //  await page.waitForTimeout(3000)
 
@@ -41,7 +41,7 @@ test.skip('Login Validation with Invalid credentials', async({page}) =>{
      await expect(login.signInHeading).toBeVisible()
      await expect(login.forgotPassword).toBeVisible()
      await login.Login(staticData.email,staticData.invalidPassword)
-    await  errorToasterMsg(page, '#error', 'Email or Password entered is incorrect.');
+    await  errorToasterMsg(page, login.errorToastrMsg, 'Email or Password entered is incorrect.');
 
 
                 

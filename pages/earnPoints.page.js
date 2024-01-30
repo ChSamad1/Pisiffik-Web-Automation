@@ -7,6 +7,7 @@ exports.earnPointsPage = class earnPointsPage{
     this.earnPointsLoyalityAmount = page.locator('#loyaltyPrice')
     this.earnPointsLoyalityPoints = page.locator('#loyaltyPoints')
     this.earnPointsSaveBtn = page.locator('#submitPoints')
+    this.toasterMessage = page.locator('.toast-message')
     this.navigateToEarnPointsPg = page.getByRole('link',{name:'Earn Points'})
 
 

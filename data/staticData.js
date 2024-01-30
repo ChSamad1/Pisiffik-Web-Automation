@@ -17,6 +17,7 @@ class commonData{
         this.reasonsUrl = '/reason'
         this.earnpointsUrl = '/loyalty/points'
         this.membershipProductsUrl = '/membership'
+        this.conceptsUrl = '/concepts'
         
 
     }

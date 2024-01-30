@@ -2,7 +2,7 @@ const {test,expect} = require('@playwright/test')
 const{loginPage} = require('../pages/login.page')
 const{dashboardPage} = require('../pages/dashboard.page')
 const{earnPointsPage} = require('../pages/earnPoints.page')
-
+const {toastermsg} = require('../utils/commonHelper')
 const staticData = require('../data/staticData')
 
 
@@ -26,7 +26,7 @@ test('Earn Points Validation', async ({page}) => {
 
     await earnPoints.earnPointsSaveButton()
 
-
+    await toastermsg(page,earnPoints.toasterMessage,'Points Updated Successfully.')
 
 
 })

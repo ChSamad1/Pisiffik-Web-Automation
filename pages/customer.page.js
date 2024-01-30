@@ -15,7 +15,7 @@ exports.customerPage = class customerPage{
         this.customerEntriesPerpage = page.locator('#DataTables_Table_0_info')
         this.customernextPage = page.getByRole('link',{name: 'Next'})
         this.customerPreviousPg = page.getByRole('link',{name: 'Previous'})
-        this.navigateTocustomerPg = page.getByRole('link',{name:' Customers'})
+        this.navigateTocustomerPg = page.getByRole('link',{name:' Customers'})
         
         
     }
