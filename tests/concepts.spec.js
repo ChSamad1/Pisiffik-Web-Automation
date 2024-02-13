@@ -6,7 +6,7 @@ const {conceptsPage} = require('../pages/Concepts/concepts.page')
 const staticData = require('../data/staticData')
 
 
-test.only ('Concepts Validation', async ({page}) => {
+test('Concepts Validation', async ({page}) => {
 
     const login = new loginPage(page)
     const dashboard = new dashboardPage(page)
@@ -44,7 +44,7 @@ test.only ('Concepts Validation', async ({page}) => {
     await expect (entriesOption).toContain('100')
     //await concepts.Search('Samad')
     await concepts.ShowingEntries()
-    await concepts.NextPage()
+    //await concepts.NextPage()
     // const ShowEntries = await page.innerText(concepts.showingEnt)
     // console.log(ShowEntries)
     await concepts.ShowingEntries()

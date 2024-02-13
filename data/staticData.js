@@ -16,6 +16,10 @@ class commonData{
         this.ticketsUrl = '/tickets'
         this.reasonsUrl = '/reason'
         this.userProfileUrl ='/setting'
+        this.storeConceptUrl ='/storeConcept'
+        this.categoryUrl = '/category'
+        this.storeproductsUrl = '/storeProduct'
+        this.RecipesTypesUrl = '/recipeType'
 
     }
 

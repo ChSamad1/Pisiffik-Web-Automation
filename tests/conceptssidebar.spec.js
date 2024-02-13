@@ -4,7 +4,7 @@ const{dashboardPage} = require('../pages/dashboard.page')
 const{conceptssidebarPage} =require('../pages/Concepts/conceptssidebar.page')
 const staticData = require('../data/staticData')
 
-test.only ('mainConcepts', async ({page}) => {
+test('mainConcepts', async ({page}) => {
     
     
     const login = new loginPage(page)

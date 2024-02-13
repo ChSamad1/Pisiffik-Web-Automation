@@ -4,7 +4,7 @@ const{dashboardPage} = require('../pages/dashboard.page')
 const {reasonsPage} = require('../pages/customerSupports/reasons.page')
 const staticData = require('../data/staticData')
 
-test.only ('Reasons Validation', async ({page}) => {
+test('Reasons Validation', async ({page}) => {
 
     const login = new loginPage(page)
     const dashboard = new dashboardPage(page)
