@@ -27,6 +27,13 @@ test('Recipe Types Validation', async ({page}) =>{
     await typespg.TypesAddNewButton()
     await typespg.RecipeName('test')
     await typespg.SaveButton()
+    await typespg.EditButton()
+    await typespg.EditName('new test')
+    await typespg.EditSaveButton()
+    await typespg.DeleteButton()
+    await typespg.NextPageButton()
+    await typespg.SearchBar('new test')
+
 
 
 }
