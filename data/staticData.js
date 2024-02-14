@@ -20,6 +20,7 @@ class commonData{
         this.categoryUrl = '/category'
         this.storeproductsUrl = '/storeProduct'
         this.RecipesTypesUrl = '/recipeType'
+        this.ChefUrl = '/chef'
 
     }
 
