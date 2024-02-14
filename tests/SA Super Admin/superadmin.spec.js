@@ -1,8 +1,8 @@
 const {test, expect} = require('@playwright/test')
-const { loginPage } = require('../pages/login.page')
-const { dashboardPage } = require('../pages/dashboard.page')
-const { superadminPage } =require('../pages/SA Super Admin/superadmin.page')
-const  staticData = require('../data/staticData')
+const { loginPage } = require('../../pages/login.page')
+const { dashboardPage } = require('../../pages/dashboard.page')
+const { superadminPage } =require('../../pages/SA Super Admin/superadmin.page')
+const  staticData = require('../../data/staticData')
 
  test("Super Admin", async({page}) =>{
 

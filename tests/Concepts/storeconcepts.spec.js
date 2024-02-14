@@ -1,9 +1,9 @@
 const {test,expect} = require('@playwright/test')
-const{loginPage} = require('../pages/login.page')
-const{dashboardPage} = require('../pages/dashboard.page')
-const{conceptssidebarPage} =require('../pages/Concepts/conceptssidebar.page')
-const {storeconceptsPage} = require('../pages/Concepts/storeconcepts.page')
-const staticData = require('../data/staticData')
+const{loginPage} = require('../../pages/login.page')
+const{dashboardPage} = require('../../pages/dashboard.page')
+const{conceptssidebarPage} =require('../../pages/Concepts/conceptssidebar.page')
+const {storeconceptsPage} = require('../../pages/Concepts/storeconcepts.page')
+const staticData = require('../../data/staticData')
 
 test('Store Concepts Validation', async ({page}) => {
 
