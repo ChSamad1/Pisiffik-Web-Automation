@@ -2,6 +2,7 @@ exports.reasonsPage = class reasonsPage{
     constructor(page){
 
         this.page = page;
+        this.navigateToReasonsPg = page.getByRole('link',{name:'Reasons'})
         this.reasonsHeading = page.getByRole('heading',{name:'Reason'})
         this.reasonsAddNewBtn = page.getByRole('link',{name: '󰐗 Add New'})
         this.reasonsAddNewBtnDetails = page.getByRole('textbox')
