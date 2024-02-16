@@ -21,6 +21,7 @@ class commonData{
         this.storeproductsUrl = '/storeProduct'
         this.RecipesTypesUrl = '/recipeType'
         this.ChefUrl = '/chef'
+        this.NewsUrl = '/news'
 
     }
 
